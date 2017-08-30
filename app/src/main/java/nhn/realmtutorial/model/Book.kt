@@ -1,6 +1,7 @@
 package nhn.realmtutorial.model
 
 import io.realm.RealmObject
+import io.realm.annotations.PrimaryKey
 import io.realm.annotations.RealmClass
 
 /**
@@ -9,7 +10,8 @@ import io.realm.annotations.RealmClass
 @RealmClass
 class Book : RealmObject() {
 
-    open var id: Int = 0
+    @PrimaryKey
+    open var id: Long = 0
 
     open var title: String? = null
 
@@ -17,5 +19,5 @@ class Book : RealmObject() {
 
     open var imageUrl: String? = null
 
-
+    open var author: String? = null
 }
